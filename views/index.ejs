@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini messager</title>
+    <link rel="styleSheet" href="style.css">
+</head>
+<body>
+    <h3>All users!</h3>
+    <form method="get" action="/chats/new">
+        <button>new user</button>
+        <br/>
+        <br/>
+    </form>
+    <%for(let chat of chats){%>
+    <div class="chat">
+        <p>from <i><%= chat.from %></i></p>
+        <div class="msg">
+            <p><%= chat.msg %></p>
+            <form method="get" action="/chats/<%= chat.id %>/edit">
+                <button>edit</button></form>
+                <br/>
+                <form method="post" action="/chats/<%= chat.id %>?_method=DELETE">
+                    <button>delete</button>
+                </form>
+        </div>
+        <p>Received by <i><%=chat.to%></i></p>
+        <hr>
+        <p><%= chat.created_by.toString().split(" ")[4]%></p>
+        <p><%= chat.created_by.toString().split(" ").slice(0,4).join("-")%></p>
+    </div>
+    <br>
+    <br>
+<%}%>
+</body>
+</html>
