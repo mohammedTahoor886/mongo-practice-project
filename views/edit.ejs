@@ -8,9 +8,9 @@
 <body>
     <h1>Edit the message</h1>
         
-        <p>edit your chat : <b><%= chat._id %></b></h3>
+        <p>edit your chat : <b><%= chat._id %></b></p>
         <p>chat sended from <b><i><%= chat.from %></i></b> to <b><i><%= chat.to %></i></b></p> 
-        <form method="post" action="/chats/<%= chat._id %>?_method=PATCH">
+        <form method="post" action="/chats/<%= chat._id %>?_method=PUT">
             <p>Edit the message : <br/><textarea name="msg" cols="20" rows="5"><%= chat.msg%></textarea></p>
             <button>Edit</button>    
         </form>

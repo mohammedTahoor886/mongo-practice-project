@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show chats</title>
+</head>
+<body>
+    <h1>Chats</h1>
+    
+    <p>chat Id : <b>
+            <%= chat.id%>
+        </b></p>
+    <p>chat sended from <b><i>
+                <%= chat.from %>
+            </i></b> to <b><i>
+                <%= chat.to %>
+            </i></b></p>
+        <p>message : <b><%= chat.msg%></b></p>
+        
+</body>
+</html>
